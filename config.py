@@ -10,7 +10,7 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(vuln_app.app.root_path, 'd
 vuln_app.app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
 vuln_app.app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-vuln_app.app.config['SECRET_KEY'] = 'random'
+#vuln_app.app.config['SECRET_KEY'] = 'random'
 # start the db
 db = SQLAlchemy(vuln_app.app)
 
@@ -23,5 +23,5 @@ def custom_problem_handler(error):
     response.status_code = error.status
     return response
 vuln_app.add_error_handler(ProblemException, custom_problem_handler)
-#password = "admin123"
+#password = "admin1234"
 vuln_app.add_api('openapi3.yml')
